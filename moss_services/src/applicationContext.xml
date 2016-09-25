@@ -22,6 +22,7 @@
 	<bean id="greetingResource" class="cn.edu.tju.cs.lab.oaweb.rest.services.GreetingResource"
 		abstract="false" lazy-init="default" autowire="default">
 		<property name="menuService" ref="menuService" />
+		<property name="planeServiceImpl" ref="planeServiceImpl" />
 	</bean>
 
 	<bean id="firthDataSource" class="com.atomikos.jdbc.AtomikosDataSourceBean"
@@ -35,7 +36,7 @@
 		<property name="xaProperties">
 			<props>
 				<prop key="user">root</prop>
-				<prop key="password">123456</prop>
+				<prop key="password">123</prop>
 				<prop key="serverName">127.0.0.1</prop>
 				<prop key="portNumber">3306</prop>
 				<prop key="databaseName">smartcity</prop>
@@ -91,7 +92,7 @@
 		<property name="mappingResources">
 			<list>
 				<value>cn/edu/tju/cs/lab/oa/mysql/entities/Menu.hbm.xml</value>
-
+				<value>cn/edu/tju/cs/lab/oa/mysql/entities/Plane.hbm.xml</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -109,11 +110,18 @@
 			</props>
 		</property>
 	</bean>
-
+	
+	
 	<bean id="menuService" class="cn.edu.tju.cs.lab.oa.models.impl.MenuServiceImpl">
 		<property name="mymenudao" ref="menuDao" />
 	</bean>
 	<bean id="menuDao" class="cn.edu.tju.cs.lab.oa.dal.MenuDao">
+		<property name="sessionFactory" ref="firthSessionFactory" />
+	</bean>
+	<bean id="planeServiceImpl" class="cn.edu.tju.cs.lab.oa.models.impl.PlaneServiceImpl">
+		<property name="planeDao" ref="planeDao" />
+	</bean>
+	<bean id="planeDao" class="cn.edu.tju.cs.lab.oa.dal.PlaneDao">
 		<property name="sessionFactory" ref="firthSessionFactory" />
 	</bean>
 </beans>

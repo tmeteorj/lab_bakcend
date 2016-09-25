@@ -16,14 +16,14 @@
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath:applicationContext.xml</param-value>
   </context-param>
-<servlet>
+ 
+	<servlet>
         <servlet-name>SpringApplication</servlet-name>
         <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
         <init-param>
             <param-name>javax.ws.rs.Application</param-name>
             <param-value>cn.edu.tju.cs.lab.oaweb.rest.services.ServiceApplication</param-value>
         </init-param>
-
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
