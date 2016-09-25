@@ -1,0 +1,20 @@
+#MyEclipse Hibernate Properties
+#Thu Jul 21 17:22:31 CST 2016
+genBasicCompId=true
+sessionFactoryName=cn.edu.tju.cs.lab.oaweb.entities.HibernateSessionFactory
+profile=
+daoSFId=
+jndiPath=
+detectM2M=true
+reStrategyClass=
+detectO2O=true
+springDaoFile=
+useJavaTypes=true
+keyGenerator=increment
+genVersionTag=false
+sessionFactoryId=
+basePersistenceClass=
+genAnnotations=false
+reSettingsFile=
+configFile=/moss_services/src/cn/edu/tju/cs/lab/oa/mysql/entities/hibernate.cfg.xml
+createConfigFile=true
